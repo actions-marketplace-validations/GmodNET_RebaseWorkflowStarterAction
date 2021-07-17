@@ -10,6 +10,14 @@ inputs:
   pr_label_name:
     description: 'Autorebase PR label'
     required: true
+  repository:
+    description: 'A full repository name'
+    default: ${{ github.repository }}
+    required: false
+  ref:
+    description: 'A ref of the branch to rebase to'
+    default: ${{ github.ref }}
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -17,5 +25,5 @@ runs:
     - ${{ inputs.token }}
     - ${{ inputs.worflow_id }}
     - ${{ inputs.pr_label_name }}
-    - ${{ github.ref }}
-    - ${{ github.repository }}
+    - ${{ inputs.ref }}
+    - ${{ inputs.repository }}
