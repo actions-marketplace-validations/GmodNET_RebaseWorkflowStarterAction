@@ -1,5 +1,8 @@
 name: 'Rebase Workflow Starter'
 description: 'Starts a rebase worflow for each labled Pull Request'
+branding:
+  icon: arrow-up-circle
+  color: blue
 inputs:
   token:  # id of input
     description: 'A token to authenticate with GitHub API'
