@@ -25,8 +25,8 @@ namespace RebaseWorkflowStarterAction
 
                 string current_branch_name = string.Join('/', current_repo_head_name.Split('/')[2..]);
 
-                Console.WriteLine($"Rebase worflow id: {workflow_id}");
-                Console.WriteLine($"PR lable name to check for autorebase: {pr_label_name}");
+                Console.WriteLine($"Rebase workflow name: {workflow_id}");
+                Console.WriteLine($"PR lable name to check for auto rebase: {pr_label_name}");
                 Console.WriteLine($"Branch to rebase to: {current_branch_name}");
                 Console.WriteLine($"Full repository name: {full_repo_name}");
 
