@@ -6,7 +6,7 @@ name: Manual workflow
 # or API.
 on:
   workflow_dispatch:
-  
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
@@ -22,9 +22,9 @@ jobs:
         with:
           app_id: ${{ secrets.GMODNET_GITHUB_BOT_ID }}
           private_key: ${{ secrets.GMODNET_GITHUB_BOT_KEY }}
-          
+
       - name: Invoke action
-        uses: ./
+        uses: GmodNET/RebaseWorkflowStarterAction@main
         with:
           token: ${{ steps.generate_token.outputs.token }}
           worflow_id: rebase-pr-workflow.yml
