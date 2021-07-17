@@ -1,0 +1,21 @@
+name: 'Rebase Workflow Starter'
+description: 'Starts a rebase worflow for each labled Pull Request'
+inputs:
+  token:  # id of input
+    description: 'A token to authenticate with GitHub API'
+    required: true
+  worflow_id:
+    description: 'Rebase workflow definition filename'
+    required: true
+  pr_label_name:
+    description: 'Autorebase PR label'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.token }}
+    - ${{ inputs.worflow_id }}
+    - ${{ inputs.pr_label_name }}
+    - ${{ github.ref }}
+    - ${{ github.repository }}
