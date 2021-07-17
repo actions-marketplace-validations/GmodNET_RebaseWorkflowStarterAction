@@ -4,7 +4,8 @@
       "commandName": "Project"
     },
     "Docker": {
-      "commandName": "Docker"
+      "commandName": "Docker",
+      "commandLineArgs": "token workflow_name pr-lable ref/heads/main Owner/Repo"
     }
   }
 }
