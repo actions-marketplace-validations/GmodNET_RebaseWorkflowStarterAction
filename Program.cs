@@ -48,11 +48,11 @@ namespace RebaseWorkflowStarterAction
 
                 foreach (PullRequest pr in pull_requests)
                 {
-                    if(pr.State.Value == ItemState.Open && pr.Labels.Any(label => label.Name == pr_label_name) && pr.Base.Ref == current_repo_head_name)
+                    if(pr.State.Value == ItemState.Open && pr.Labels.Any(label => label.Name == pr_label_name) && pr.Base.Ref == current_branch_name)
                     {
                         Console.WriteLine($"Triggering rebase workflow for Pull Request #{pr.Number}");
 
-                        DispatchPostBody request_data = new DispatchPostBody(pr.Base.Ref, new DispatchInputs(pr.Number.ToString()));
+                        DispatchPostBody request_data = new DispatchPostBody(current_branch_name, new DispatchInputs(pr.Number.ToString()));
 
                         byte[] request_bytes = JsonSerializer.SerializeToUtf8Bytes<DispatchPostBody>(request_data);
 
